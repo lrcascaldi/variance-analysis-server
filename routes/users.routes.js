@@ -9,14 +9,14 @@ const router = express.Router();
 const validate = require("../middlewares/datavalidationMiddleware");
 
 // ------------ IMPORT SCHEMAS ---------------------
-const { userInSchema } = require("../validators/userValidation");
+const { userSchema } = require("../validators/userValidation");
 
 // ------------ IMPORT CONTROLLERS ---------------------
 // imports controllers modules
 const {
   getUsers,
-  createUser,
-  readUser,
+  postUser,
+  getUser,
 } = require("../controllers/users.controllers");
 
 // ------------ ROUTES ---------------------
@@ -24,12 +24,11 @@ const {
 // GET /users
 router.get("/", getUsers);
 
-//validate(userInSchema),
 // POST /users
-router.post("/", validate(userInSchema), createUser);
+router.post("/", validate(userSchema), postUser);
 
 // GET /user
-router.get("/:id", readUser);
+router.get("/:id", getUser);
 
 // ------------ EXPORT MODULE ---------------------
 module.exports = router;

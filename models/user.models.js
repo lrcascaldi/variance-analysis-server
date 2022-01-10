@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 // ------------ MODELS ------------------
 // define userIn schema
-const userIn = new mongoose.Schema({
+const user = new mongoose.Schema({
   name: {
     type: String, // text field
     required: true, // field is required
@@ -26,9 +26,9 @@ const userIn = new mongoose.Schema({
 
 // ------------ SETTINGS ------------------
 // compile model from schema
-const UserIn = mongoose.model("UserIn", userIn, "User");
+const userModel = mongoose.model("user", user, "User");
 
 // ------------ EXPORT MODULE ---------------------
 module.exports = {
-  UserIn,
+  userModel,
 };
