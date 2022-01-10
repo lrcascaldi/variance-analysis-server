@@ -1,6 +1,6 @@
 // ------------ IMPORT MODULES ---------------------
 // imports userModel operations from database
-const { userModel } = require("../models/user.models");
+const { userModel } = require("../models/user.models.js");
 
 // ------------ SETTINGS ------------------
 // settings
@@ -29,5 +29,15 @@ const readUser = async (userID) => {
   }
 };
 
+// update user
+const updateUser = async (userID, userData) => {
+  const userNewData = await userModel.findOneAndUpdate(
+    { _id: userID },
+    userData,
+    { new: true }
+  );
+  return userNewData;
+};
+
 // ------------ EXPORT MODULE ---------------------
-module.exports = { readUsers, createUser, readUser };
+module.exports = { readUsers, createUser, readUser, updateUser };

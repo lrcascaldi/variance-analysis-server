@@ -1,9 +1,9 @@
 // ------------ IMPORT MODULES ---------------------
-// imports morgan logger middleware
+// imports yup data validation middleware
 const yup = require("yup");
 
 // ------------ SETTINGS ------------------
-// morgan logger middleware -> https://github.com/jquense/yup
+// userSchema settings for yup data validation middleware -> https://github.com/jquense/yup
 const userSchema = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),

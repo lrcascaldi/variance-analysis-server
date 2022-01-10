@@ -18,7 +18,8 @@ const {
   getUsers,
   postUser,
   getUser,
-} = require("../controllers/users.controllers");
+  putUser,
+} = require("../controllers/users.controllers.js");
 
 // ------------ ROUTES ---------------------
 // GET /users
@@ -29,6 +30,9 @@ router.post("/", validate(userSchema), postUser);
 
 // GET /user
 router.get("/:id", getUser);
+
+// PUT /users/:id
+router.put("/:id", validate(userSchema), putUser);
 
 // ------------ EXPORT MODULE ---------------------
 module.exports = router;
