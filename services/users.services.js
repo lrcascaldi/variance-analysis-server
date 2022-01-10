@@ -6,11 +6,10 @@ const { userModel } = require("../models/user.models");
 // settings
 
 // ------------ SERVICES ------------------
-
-// list all users
+// read users
 const readUsers = async () => await userModel.find();
 
-// create one user
+// create user
 const createUser = async (userData) => {
   try {
     const newUserData = await userModel.create(userData);
@@ -20,7 +19,7 @@ const createUser = async (userData) => {
   }
 };
 
-// read one user
+// read user
 const readUser = async (userID) => {
   const userData = await userModel.findOne({ _id: userID });
   if (userData == null) {

@@ -7,6 +7,7 @@ const ObjectId = require("mongodb").ObjectId;
 // const { userModel } = require("../models/user.models");
 
 // ------------ IMPORT SERVICES ---------------------
+// import services of user controllers
 const {
   readUsers,
   createUser,
@@ -14,8 +15,7 @@ const {
 } = require("../services/users.services");
 
 // ------------ CONTROLLERS ------------------
-
-// GET all users controller
+// GET users
 const getUsers = async (req, res, next) => {
   try {
     // list all users

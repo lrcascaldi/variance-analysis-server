@@ -9,6 +9,7 @@ const router = express.Router();
 const validate = require("../middlewares/datavalidationMiddleware");
 
 // ------------ IMPORT VALIDATION SCHEMAS ---------------------
+// import user schema validation
 const { userSchema } = require("../validators/userValidation");
 
 // ------------ IMPORT CONTROLLERS ---------------------
@@ -20,7 +21,6 @@ const {
 } = require("../controllers/users.controllers");
 
 // ------------ ROUTES ---------------------
-
 // GET /users
 router.get("/", getUsers);
 
