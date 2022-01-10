@@ -5,10 +5,10 @@ const ObjectId = require("mongodb").ObjectId;
 // ------------ IMPORT MODELS ---------------------
 const { UserIn } = require("../models/user.models");
 
-// ------------ CONTROLLER AND SERVICES TEST------------------
+// ------------ IMPORT SERVICES ---------------------
+const { listUsers } = require("../services/users.services");
 
-// list all users service
-const listUsers = async () => await UserIn.find();
+// ------------ CONTROLLERS ------------------
 
 // GET all users controller
 const getUsers = async (req, res, next) => {
@@ -17,7 +17,6 @@ const getUsers = async (req, res, next) => {
     const userList = await listUsers();
     console.log(userList);
     res.status(200).json(userList);
-    next();
   } catch (err) {
     res.status(400).json({ msg: "Bad request" }).send(err);
   }
