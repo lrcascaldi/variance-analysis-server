@@ -8,7 +8,7 @@ const ObjectId = require("mongodb").ObjectId;
 
 // ------------ IMPORT SERVICES ---------------------
 const {
-  listUsers,
+  readUsers,
   createUser,
   readUser,
 } = require("../services/users.services");
@@ -19,7 +19,7 @@ const {
 const getUsers = async (req, res, next) => {
   try {
     // list all users
-    const userList = await listUsers();
+    const userList = await readUsers();
     res.status(200).json(userList);
   } catch (err) {
     res.status(400).json({ msg: `Bad request. ${err}` });

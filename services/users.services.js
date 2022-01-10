@@ -7,9 +7,10 @@ const { userModel } = require("../models/user.models");
 
 // ------------ SERVICES ------------------
 
-// list all users service
-const listUsers = async () => await userModel.find();
+// list all users
+const readUsers = async () => await userModel.find();
 
+// create one user
 const createUser = async (userData) => {
   try {
     const newUserData = await userModel.create(userData);
@@ -19,6 +20,7 @@ const createUser = async (userData) => {
   }
 };
 
+// read one user
 const readUser = async (userID) => {
   const userData = await userModel.findOne({ _id: userID });
   if (userData == null) {
@@ -29,4 +31,4 @@ const readUser = async (userID) => {
 };
 
 // ------------ EXPORT MODULE ---------------------
-module.exports = { listUsers, createUser, readUser };
+module.exports = { readUsers, createUser, readUser };

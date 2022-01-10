@@ -8,7 +8,7 @@ const router = express.Router();
 // imports router
 const validate = require("../middlewares/datavalidationMiddleware");
 
-// ------------ IMPORT SCHEMAS ---------------------
+// ------------ IMPORT VALIDATION SCHEMAS ---------------------
 const { userSchema } = require("../validators/userValidation");
 
 // ------------ IMPORT CONTROLLERS ---------------------
