@@ -22,8 +22,6 @@ const user = new mongoose.Schema({
   },
 });
 
-// userOut
-
 // ------------ SETTINGS ------------------
 // compile model from schema
 const userModel = mongoose.model("user", user, "User");

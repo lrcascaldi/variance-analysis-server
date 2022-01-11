@@ -36,10 +36,13 @@ app.use(morganLoggerMw);
 
 // ------------ IMPORT ROUTES ------------------
 // base routes
-const baseRoutes = require("./routes/base.routes");
+const baseRoutes = require("./routes/base.routes.js");
 
 // users routes
-const usersRoutes = require("./routes/users.routes");
+const usersRoutes = require("./routes/users.routes.js");
+
+// docs routes
+const docsRoutes = require("./routes/docs.routes.js");
 
 // ------------ ROUTES SETTINGS ------------------
 // base routes
@@ -47,6 +50,9 @@ app.use("/", baseRoutes);
 
 // users routes
 app.use("/api/users", usersRoutes);
+
+// docs route
+app.use("/api/docs", docsRoutes);
 
 // ------------ SERVER APP STARTUP ------------------
 // try database connection and initialize server app

@@ -11,8 +11,6 @@ const port = process.env.APP_PORT;
 // imports router
 const router = express.Router();
 
-// ------------ IMPORT CONTROLLERS ---------------------
-
 // ------------ ROUTES ---------------------
 // GET /
 router.get("/", (req, res) => {
